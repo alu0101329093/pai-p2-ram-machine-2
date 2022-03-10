@@ -7,8 +7,8 @@ OperatorNotDefinedException::OperatorNotDefinedException(
     : operator_name_{operator_name}, line_{line} {}
 
 const char* OperatorNotDefinedException::what() const noexcept {
-  std::string text = "Error: Operator " + operator_name_ +
-                     " is not defined in line " + std::to_string(line_) + ".";
+  std::string text = "Operator " + operator_name_ + " is not defined in line " +
+                     std::to_string(line_) + ".";
   return text.c_str();
 }
 

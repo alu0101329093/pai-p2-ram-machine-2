@@ -7,7 +7,7 @@ InstructionIncompatibleException::InstructionIncompatibleException(int line)
 
 const char* InstructionIncompatibleException::what() const noexcept {
   std::string text =
-      "Error: Instruction incompatible in line " + std::to_string(line_) + ".";
+      "Instruction incompatible in line " + std::to_string(line_) + ".";
   return text.c_str();
 }
 

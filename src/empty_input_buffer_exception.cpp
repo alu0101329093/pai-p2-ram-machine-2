@@ -3,7 +3,7 @@
 namespace daa {
 
 const char* EmptyInputBufferException::what() const noexcept {
-  return "Error: Input buffer empty when trying to read.";
+  return "Input buffer empty when trying to read.";
 }
 
 }  // namespace daa
