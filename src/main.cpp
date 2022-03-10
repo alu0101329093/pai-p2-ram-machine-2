@@ -17,16 +17,16 @@ int main(int argc, char* argv[]) {
     return ProtectedMain(argc, argv);
   } catch (const daa::TagNotDefinedException& error) {
     std::cerr << argv[0] << ": " << error.what() << "\n";
-    return 1;
+    return 2;
   } catch (const daa::OperatorNotDefinedException& error) {
     std::cerr << argv[0] << ": " << error.what() << "\n";
-    return 2;
+    return 3;
   } catch (const daa::InstructionIncompatibleException& error) {
     std::cerr << argv[0] << ": " << error.what() << "\n";
-    return 3;
+    return 4;
   } catch (const daa::EmptyInputBufferException& error) {
     std::cerr << argv[0] << ": " << error.what() << "\n";
-    return 4;
+    return 5;
   } catch (...) {
     std::cerr << argv[0] << ": Unknown error\n";
     return 99;
