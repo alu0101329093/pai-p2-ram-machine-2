@@ -1,0 +1,21 @@
+# Diseñe un programa con el repertorio de instrucciones de una máquina RAM que
+# lea los valores de la cinta de entrada y los multiplique hasta encontrar un
+# 0. Sólo deberá multiplicar aquellos valores que sean pares.
+
+
+          load =1
+          store 2
+
+lee:	    read 1
+			    load 1
+			    jzero fin
+          mod =2
+          jgtz not_mul
+
+          load 1
+          mul 2
+          store 2
+not_mul:  jump lee
+
+fin:	    write 2
+          halt
