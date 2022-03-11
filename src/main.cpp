@@ -1,9 +1,13 @@
 #include "main.h"
 
 int ProtectedMain(int argc, char* argv[]) {
-  std::ifstream instructions_file{argv[1]};
-  std::ifstream input_file{argv[2]};
-  std::ofstream output_file{argv[3]};
+  std::optional<daa::Arguments> parse_result = daa::ParseArguments(argc, argv);
+  if (!parse_result) return EXIT_SUCCESS;
+
+  daa::Arguments arguments = parse_result.value();
+  std::ifstream instructions_file{arguments.instruction_file_name};
+  std::ifstream input_file{arguments.input_file_name};
+  std::ofstream output_file{arguments.output_file_name};
 
   daa::RamMachine machine{instructions_file, input_file, output_file};
   machine.Init();
@@ -15,6 +19,10 @@ int ProtectedMain(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
   try {
     return ProtectedMain(argc, argv);
+  } catch (const daa::InsufficientArgumentsException& error) {
+    std::cerr << argv[0] << ": " << error.what() << "\n";
+    std::cerr << "Try '" << argv[0] << " --help' for more information.\n";
+    return 1;
   } catch (const daa::TagNotDefinedException& error) {
     std::cerr << argv[0] << ": " << error.what() << "\n";
     return 2;
