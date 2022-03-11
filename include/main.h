@@ -1,5 +1,5 @@
-#ifndef P2RAMMACHINE_MAIN_H_
-#define P2RAMMACHINE_MAIN_H_
+#ifndef P3RAMMACHINE_MAIN_H_
+#define P3RAMMACHINE_MAIN_H_
 
 #include <fstream>
 #include <iostream>
@@ -14,4 +14,4 @@
 
 int ProtectedMain(int argc, char* argv[]);
 
-#endif  // P2RAMMACHINE_MAIN_H_
+#endif  // P3RAMMACHINE_MAIN_H_

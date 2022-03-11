@@ -1,5 +1,5 @@
-#ifndef P2RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_INSTRUCTION_H_
-#define P2RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_INSTRUCTION_H_
+#ifndef P3RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_INSTRUCTION_H_
+#define P3RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_INSTRUCTION_H_
 
 #include "program_memory/instructions/instruction_incomptible_exception.h"
 #include "program_memory/instructions/operands/const_operand.h"
@@ -28,4 +28,4 @@ class Instruction {
 
 }  // namespace daa
 
-#endif  // P2RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_INSTRUCTION_H_
+#endif  // P3RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_INSTRUCTION_H_

@@ -8,7 +8,8 @@
       "args": [
         "ejemplosRAM/testpe.ram",
         "bin/input_tape.in",
-        "bin/output_tape.out"
+        "bin/output_tape.out",
+        "0"
       ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

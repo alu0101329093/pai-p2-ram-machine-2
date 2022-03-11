@@ -1,5 +1,5 @@
-#ifndef P2RAMMACHINE_TAPES_INPUT_TAPE_H_
-#define P2RAMMACHINE_TAPES_INPUT_TAPE_H_
+#ifndef P3RAMMACHINE_TAPES_INPUT_TAPE_H_
+#define P3RAMMACHINE_TAPES_INPUT_TAPE_H_
 
 #include <fstream>
 #include <queue>
@@ -25,4 +25,4 @@ class InputTape {
 
 }  // namespace daa
 
-#endif  // P2RAMMACHINE_TAPES_INPUT_TAPE_H_
+#endif  // P3RAMMACHINE_TAPES_INPUT_TAPE_H_
