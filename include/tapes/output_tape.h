@@ -13,7 +13,7 @@ class OutputTape {
   OutputTape(std::ofstream& output_file);
   ~OutputTape();
 
-  inline int Write(int value) { output_values_.push(value); }
+  inline void Write(int value) { output_values_.push(value); }
 
  private:
   std::queue<int> output_values_;
