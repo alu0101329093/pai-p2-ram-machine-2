@@ -3,7 +3,7 @@
 namespace daa {
 
 const char* EmptyInputBufferException::what() const noexcept {
-  return "Insuffiecient number of arguments to initialize the program.";
+  return "Input buffer empty when trying to read.";
 }
 
 }  // namespace daa
