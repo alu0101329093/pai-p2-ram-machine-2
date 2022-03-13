@@ -22,7 +22,8 @@ std::optional<Arguments> ParseArguments(int argc, char* argv[]) {
 
   return Arguments{std::string{argv[1]}, std::string{argv[2]},
                    std::string{argv[3]},
-                   static_cast<DebugOption>(std::stoi(argv[4]))};
+                   argc > 4 ? static_cast<DebugOption>(std::stoi(argv[4]))
+                            : DebugOption::kNonDebug};
 }
 
 }  // namespace daa
