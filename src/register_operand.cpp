@@ -6,7 +6,7 @@ RegisterOperand::RegisterOperand(std::size_t index) : index_{index} {}
 
 int& RegisterOperand::GetValue(DataMemory& data_memory,
                                std::size_t current_line) {
-  return data_memory[index_];
+  return data_memory[index_]->GetValue();
 }
 
 }  // namespace daa

@@ -7,7 +7,7 @@ RegisterPointerOperand::RegisterPointerOperand(std::size_t index)
 
 int& RegisterPointerOperand::GetValue(DataMemory& data_memory,
                                       std::size_t current_line) {
-  return data_memory[data_memory[index_]];
+  return data_memory[data_memory[index_]->GetValue()]->GetValue();
 }
 
 }  // namespace daa
