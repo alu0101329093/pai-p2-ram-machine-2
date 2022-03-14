@@ -8,8 +8,10 @@ int ProtectedMain(int argc, char* argv[]) {
   std::ifstream instructions_file{arguments.instruction_file_name};
   std::ifstream input_file{arguments.input_file_name};
   std::ofstream output_file{arguments.output_file_name};
+  daa::DebugOption debug_option{arguments.debug_option};
 
-  daa::RamMachine machine{instructions_file, input_file, output_file};
+  daa::RamMachine machine{instructions_file, input_file, output_file,
+                          debug_option};
   machine.Init();
   std::cout << "Machine Finished!" << std::endl;
 

@@ -12,7 +12,7 @@ std::optional<Arguments> ParseArguments(int argc, char* argv[]) {
     std::cout
         << "The debug argument is an int and hold how the program will run:\n"
            "0 if not debug needed,\n"
-           "1 if only want executed instructions amount\n"
+           "1 if only want the number of instructions executed\n"
            "2 if want full debug session\n";
     return std::nullopt;
   }
