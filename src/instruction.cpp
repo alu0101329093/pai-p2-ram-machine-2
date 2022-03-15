@@ -19,6 +19,13 @@ void Instruction::Execute(DataMemory& data_memory, std::size_t& program_counter,
       throw InstructionIncompatibleException{line_};
     }
   }
+  if (operand_->GetValue(data_memory, line_) == 0) {
+    if (dynamic_cast<WriteOperator*>(operator_) != nullptr ||
+        dynamic_cast<ReadOperator*>(operator_) != nullptr) {
+      throw AccumulatorIncompatibilityException{"rw", line_};
+    }
+  }
+
   operator_->Execute(data_memory, program_counter, input_tape, output_tape,
                      operand_->GetValue(data_memory, line_));
 }
