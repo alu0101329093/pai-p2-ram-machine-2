@@ -9,4 +9,6 @@ void LoadOperator::Execute(DataMemory& data_memory,
   program_counter++;
 }
 
+std::string LoadOperator::ToString() { return "LOAD"; }
+
 }  // namespace daa

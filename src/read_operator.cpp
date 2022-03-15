@@ -9,4 +9,6 @@ void ReadOperator::Execute(DataMemory& data_memory,
   program_counter++;
 }
 
+std::string ReadOperator::ToString() { return "READ"; }
+
 }  // namespace daa

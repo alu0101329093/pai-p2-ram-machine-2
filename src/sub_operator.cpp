@@ -9,4 +9,6 @@ void SubOperator::Execute(DataMemory& data_memory, std::size_t& program_counter,
   program_counter++;
 }
 
+std::string SubOperator::ToString() { return "SUB"; }
+
 }  // namespace daa

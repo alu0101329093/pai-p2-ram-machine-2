@@ -9,4 +9,6 @@ void WriteOperator::Execute(DataMemory& data_memory,
   program_counter++;
 }
 
+std::string WriteOperator::ToString() { return "WRITE"; }
+
 }  // namespace daa

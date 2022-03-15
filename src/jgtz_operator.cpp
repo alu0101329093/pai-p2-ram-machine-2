@@ -11,4 +11,6 @@ void JgtzOperator::Execute(DataMemory& data_memory,
     program_counter++;
 }
 
+std::string JgtzOperator::ToString() { return "JGTZ"; }
+
 }  // namespace daa

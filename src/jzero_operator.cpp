@@ -11,4 +11,6 @@ void JzeroOperator::Execute(DataMemory& data_memory,
     program_counter++;
 }
 
+std::string JzeroOperator::ToString() { return "JZERO"; }
+
 }  // namespace daa

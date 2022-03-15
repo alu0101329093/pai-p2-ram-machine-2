@@ -22,7 +22,7 @@ void Instruction::Execute(DataMemory& data_memory, std::size_t& program_counter,
   if (operand_->GetValue(data_memory, line_) == 0) {
     if (dynamic_cast<WriteOperator*>(operator_) != nullptr ||
         dynamic_cast<ReadOperator*>(operator_) != nullptr) {
-      throw AccumulatorIncompatibilityException{"rw", line_};
+      throw AccumulatorIncompatibilityException{operator_->ToString(), line_};
     }
   }
 

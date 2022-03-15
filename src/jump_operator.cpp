@@ -8,4 +8,6 @@ void JumpOperator::Execute(DataMemory& data_memory,
   program_counter = value;
 }
 
+std::string JumpOperator::ToString() { return "JUMP"; }
+
 }  // namespace daa

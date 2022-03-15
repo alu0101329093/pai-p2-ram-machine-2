@@ -9,4 +9,6 @@ void StoreOperator::Execute(DataMemory& data_memory,
   program_counter++;
 }
 
+std::string StoreOperator::ToString() { return "STORE"; }
+
 }  // namespace daa
