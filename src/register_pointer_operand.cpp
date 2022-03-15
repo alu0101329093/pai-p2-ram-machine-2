@@ -10,6 +10,10 @@ int& RegisterPointerOperand::GetValue(DataMemory& data_memory,
   return data_memory[data_memory[index_]->GetValue()]->GetValue();
 }
 
+std::string RegisterPointerOperand::ToString() {
+  return "*" + std::to_string(index_);
+}
+
 int RegisterPointerOperand::GetIndex(DataMemory& data_memory) {
   return data_memory[index_]->GetValue();
 }

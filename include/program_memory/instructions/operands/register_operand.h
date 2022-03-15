@@ -14,6 +14,8 @@ class RegisterOperand : public Operand {
 
   int& GetValue(DataMemory& data_memory, std::size_t current_line) override;
 
+  std::string ToString() override;
+
   int GetIndex(DataMemory& data_memory);
 
  private:

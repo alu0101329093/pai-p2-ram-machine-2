@@ -18,6 +18,8 @@ class TagOperand : public Operand {
 
   int& GetValue(DataMemory& data_memory, std::size_t current_line) override;
 
+  std::string ToString() override;
+
  private:
   std::string tag_name_;
 };

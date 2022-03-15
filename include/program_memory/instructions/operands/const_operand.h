@@ -11,6 +11,8 @@ class ConstOperand : public Operand {
 
   int& GetValue(DataMemory& data_memory, std::size_t current_line) override;
 
+  std::string ToString() override;
+
  private:
   int value_;
 };

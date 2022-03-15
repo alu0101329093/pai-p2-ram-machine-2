@@ -27,6 +27,12 @@ int& RegisterOperand::GetValue(DataMemory& data_memory,
   return data_memory[index_]->GetValue(index_operand);
 }
 
+std::string RegisterOperand::ToString() {
+  return std::to_string(index_) + (index_operand_ != nullptr
+                                       ? "[" + index_operand_->ToString() + "]"
+                                       : "");
+}
+
 int RegisterOperand::GetIndex(DataMemory&) { return index_; }
 
 }  // namespace daa

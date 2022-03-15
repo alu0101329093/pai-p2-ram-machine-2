@@ -14,4 +14,6 @@ int& TagOperand::GetValue(DataMemory& data_memory, std::size_t current_line) {
   }
 }
 
+std::string TagOperand::ToString() { return tag_name_; }
+
 }  // namespace daa
