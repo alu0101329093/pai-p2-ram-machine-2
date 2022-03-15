@@ -37,4 +37,9 @@ bool Instruction::IsHalt() {
   return dynamic_cast<HaltOperator*>(operator_) != nullptr;
 }
 
+std::string Instruction::ToString() const {
+  return operator_->ToString() + " " +
+         (operand_ != nullptr ? operand_->ToString() : "");
+}
+
 }  // namespace daa

@@ -15,17 +15,28 @@ RamMachine::RamMachine(std::ifstream& instructions_file,
 void RamMachine::Init() {
   Instruction current_instruction = program_memory_[program_counter_];
   std::size_t instructions_count{1};
+
   while (!current_instruction.IsHalt()) {
     current_instruction.Execute(data_memory_, program_counter_, input_tape_,
                                 output_tape_);
+    if (debug_option_ == DebugOption::kSimulation)
+      DisplayDebugInfo(current_instruction);
     current_instruction = program_memory_[program_counter_];
     ++instructions_count;
   }
+  if (debug_option_ == DebugOption::kSimulation)
+    DisplayDebugInfo(current_instruction);
+
   if (debug_option_ == DebugOption::kInstructionsNumber ||
       debug_option_ == DebugOption::kSimulation) {
     std::cout << "Number of instructions executed: " << instructions_count
               << "\n";
   }
+}
+
+void RamMachine::DisplayDebugInfo(const Instruction& instruction) const {
+  std::cout << "Instruction: " << instruction.ToString() << "\n";
+  // std::cout << "Data Memory:\n" << data_memory_;
 }
 
 }  // namespace daa

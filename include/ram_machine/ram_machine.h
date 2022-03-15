@@ -19,6 +19,8 @@ class RamMachine {
 
   void Init();
 
+  void DisplayDebugInfo(const Instruction& instruction) const;
+
  private:
   DataMemory data_memory_;
   ProgramMemory program_memory_;
