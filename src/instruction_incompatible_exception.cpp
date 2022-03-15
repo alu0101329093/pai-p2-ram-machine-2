@@ -1,4 +1,4 @@
-#include "program_memory/instructions/instruction_incomptible_exception.h"
+#include "program_memory/instructions/instruction_incompatible_exception.h"
 
 namespace daa {
 
