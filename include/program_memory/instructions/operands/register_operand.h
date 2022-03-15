@@ -1,6 +1,8 @@
 #ifndef P3RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_OPERANDS_REGISTER_OPERAND_H_
 #define P3RAMMACHINE_PROGRAM_MEMORY_INSTRUCTIONS_OPERANDS_REGISTER_OPERAND_H_
 
+#include "data_memory/int_data_cell.h"
+#include "data_memory/int_vector_data_cell.h"
 #include "program_memory/instructions/operands/operand.h"
 
 namespace daa {

@@ -14,6 +14,15 @@ int& RegisterOperand::GetValue(DataMemory& data_memory,
   int index_operand = 0;
   if (index_operand_ != nullptr) {
     index_operand = index_operand_->GetValue(data_memory, current_line);
+    if (dynamic_cast<IntVectorDataCell*>(data_memory[index_]) != nullptr) {
+      delete data_memory[index_];
+      data_memory[index_] = new IntVectorDataCell{};
+    }
+  } else {
+    if (dynamic_cast<IntDataCell*>(data_memory[index_]) != nullptr) {
+      delete data_memory[index_];
+      data_memory[index_] = new IntDataCell{};
+    }
   }
   return data_memory[index_]->GetValue(index_operand);
 }

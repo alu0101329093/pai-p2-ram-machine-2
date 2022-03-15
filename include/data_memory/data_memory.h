@@ -15,7 +15,7 @@ class DataMemory {
   DataMemory(std::size_t size = 100);
   ~DataMemory();
 
-  inline DataCell* operator[](std::size_t index) { return registers_[index]; }
+  inline DataCell*& operator[](std::size_t index) { return registers_[index]; }
 
  private:
   std::vector<DataCell*> registers_;
