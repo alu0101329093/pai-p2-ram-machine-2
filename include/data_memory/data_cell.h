@@ -11,6 +11,7 @@ class DataCell {
   virtual ~DataCell() {}
 
   virtual int& GetValue(std::size_t index = 0) = 0;
+  virtual std::size_t GetSize() = 0;
 
   virtual std::string ToString() const = 0;
 };

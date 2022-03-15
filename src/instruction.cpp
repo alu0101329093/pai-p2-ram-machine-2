@@ -29,8 +29,16 @@ void Instruction::Execute(DataMemory& data_memory, std::size_t& program_counter,
     }
   }
 
-  operator_->Execute(data_memory, program_counter, input_tape, output_tape,
-                     operand_->GetValue(data_memory, line_));
+  if (dynamic_cast<RegisterOperand*>(operand_) != nullptr &&
+      dynamic_cast<AddOperator*>(operator_) != nullptr) {
+    RegisterOperand* register_operand =
+        reinterpret_cast<RegisterOperand*>(operand_);
+    operator_->Execute(data_memory, program_counter, input_tape, output_tape,
+                       register_operand->GetSum(data_memory, line_));
+  } else {
+    operator_->Execute(data_memory, program_counter, input_tape, output_tape,
+                       operand_->GetValue(data_memory, line_));
+  }
 }
 
 bool Instruction::IsHalt() {

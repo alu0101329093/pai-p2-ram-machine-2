@@ -14,6 +14,7 @@ class IntVectorDataCell : public DataCell {
   ~IntVectorDataCell();
 
   int& GetValue(std::size_t index = 0) override;
+  std::size_t GetSize() override;
 
   std::string ToString() const override;
 

@@ -13,6 +13,7 @@ class RegisterOperand : public Operand {
   ~RegisterOperand();
 
   int& GetValue(DataMemory& data_memory, std::size_t current_line) override;
+  int& GetSum(DataMemory& data_memory, std::size_t current_line);
 
   std::string ToString() override;
 

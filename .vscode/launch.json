@@ -9,7 +9,7 @@
         "ejemplosRAM/testinsertion.ram",
         "bin/input_tape.in",
         "bin/output_tape.out",
-        "2"
+        "1"
       ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

@@ -10,6 +10,7 @@
 #include "program_memory/instructions/operands/register_operand.h"
 #include "program_memory/instructions/operands/register_pointer_operand.h"
 #include "program_memory/instructions/operators/accumulator_incompatibility_exception.h"
+#include "program_memory/instructions/operators/add_operator.h"
 #include "program_memory/instructions/operators/halt_operator.h"
 #include "program_memory/instructions/operators/operator.h"
 #include "program_memory/instructions/operators/read_operator.h"
