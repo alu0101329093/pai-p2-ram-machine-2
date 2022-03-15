@@ -6,7 +6,7 @@
       "type": "cppdbg",
       "request": "launch",
       "args": [
-        "ejemplosRAM/test1.ram",
+        "ejemplosRAM/testinsertion.ram",
         "bin/input_tape.in",
         "bin/output_tape.out",
         "2"

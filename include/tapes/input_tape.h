@@ -2,7 +2,9 @@
 #define P3RAMMACHINE_TAPES_INPUT_TAPE_H_
 
 #include <fstream>
-#include <queue>
+#include <sstream>
+#include <string>
+#include <vector>
 
 #include "tapes/empty_input_buffer_exception.h"
 
@@ -14,13 +16,14 @@ class InputTape {
 
   inline int Read() {
     if (input_values_.empty()) throw EmptyInputBufferException{};
-    int value = input_values_.front();
-    input_values_.pop();
-    return value;
+    return input_values_[current_index_++];
   }
 
+  std::string ToString() const;
+
  private:
-  std::queue<int> input_values_;
+  std::vector<int> input_values_;
+  std::size_t current_index_;
 };
 
 }  // namespace daa

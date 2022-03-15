@@ -72,7 +72,20 @@ Operand* ProgramMemory::SelectOperand(const std::string& text) {
   if (text[0] == '=') return new ConstOperand{std::stoi(text.substr(1))};
   if (text[0] == '*')
     return new RegisterPointerOperand{std::stoi(text.substr(1))};
-  return new RegisterOperand{std::stoi(text)};
+
+  Operand* indexed_operand{nullptr};
+  std::size_t indexed_operand_start = text.find('[');
+  std::size_t indexed_operand_end = text.find(']');
+
+  if (indexed_operand_start != std::string::npos &&
+      indexed_operand_end != std::string::npos) {
+    indexed_operand = SelectOperand(
+        text.substr(indexed_operand_start + 1,
+                    indexed_operand_end - indexed_operand_start - 1));
+    return new RegisterOperand{std::stoi(text.substr(0, indexed_operand_start)),
+                               indexed_operand};
+  }
+  return new RegisterOperand{std::stoi(text), indexed_operand};
 }
 
 }  // namespace daa

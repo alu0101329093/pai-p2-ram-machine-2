@@ -14,7 +14,7 @@ int& IntVectorDataCell::GetValue(std::size_t index) {
 std::string IntVectorDataCell::ToString() const {
   std::string text{};
   for (auto value : data_) {
-    text += value + " ";
+    text += std::to_string(value) + " ";
   }
   return text;
 }

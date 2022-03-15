@@ -2,7 +2,8 @@
 #define P3RAMMACHINE_TAPES_OUTPUT_TAPE_H_
 
 #include <fstream>
-#include <queue>
+#include <sstream>
+#include <vector>
 
 #include "tapes/empty_input_buffer_exception.h"
 
@@ -13,10 +14,16 @@ class OutputTape {
   OutputTape(std::ofstream& output_file);
   ~OutputTape();
 
-  inline void Write(int value) { output_values_.push(value); }
+  inline void Write(int value) {
+    output_values_.push_back(value);
+    current_index_++;
+  }
+
+  std::string ToString() const;
 
  private:
-  std::queue<int> output_values_;
+  std::vector<int> output_values_;
+  std::size_t current_index_;
   std::ofstream& output_file_;
 };
 
