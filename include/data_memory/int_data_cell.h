@@ -2,6 +2,7 @@
 #define P3RAMMACHINE_DATA_MEMORY_INT_DATA_CELL_H_
 
 #include <cstddef>
+#include <iostream>
 
 #include "data_memory/data_cell.h"
 
@@ -13,6 +14,8 @@ class IntDataCell : public DataCell {
   ~IntDataCell();
 
   int& GetValue(std::size_t index = 0) override;
+
+  std::string ToString() const override;
 
  private:
   int data_;

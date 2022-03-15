@@ -11,4 +11,12 @@ int& IntVectorDataCell::GetValue(std::size_t index) {
   return data_[index];
 }
 
+std::string IntVectorDataCell::ToString() const {
+  std::string text{};
+  for (auto value : data_) {
+    text += value + " ";
+  }
+  return text;
+}
+
 }  // namespace daa

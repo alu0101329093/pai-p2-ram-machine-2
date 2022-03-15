@@ -1,6 +1,7 @@
 #ifndef P3RAMMACHINE_DATA_MEMORY_INT_VECTOR_DATA_CELL_H_
 #define P3RAMMACHINE_DATA_MEMORY_INT_VECTOR_DATA_CELL_H_
 
+#include <iostream>
 #include <vector>
 
 #include "data_memory/data_cell.h"
@@ -13,6 +14,8 @@ class IntVectorDataCell : public DataCell {
   ~IntVectorDataCell();
 
   int& GetValue(std::size_t index = 0) override;
+
+  std::string ToString() const override;
 
  private:
   std::vector<int> data_;

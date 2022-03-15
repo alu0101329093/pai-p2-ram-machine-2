@@ -36,7 +36,7 @@ void RamMachine::Init() {
 
 void RamMachine::DisplayDebugInfo(const Instruction& instruction) const {
   std::cout << "Instruction: " << instruction.ToString() << "\n";
-  // std::cout << "Data Memory:\n" << data_memory_;
+  std::cout << "Data Memory:\n" << data_memory_.ToString();
 }
 
 }  // namespace daa
