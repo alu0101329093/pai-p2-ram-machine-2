@@ -19,9 +19,12 @@ void Instruction::Execute(DataMemory& data_memory, std::size_t& program_counter,
       throw InstructionIncompatibleException{line_};
     }
   }
-  if (operand_->GetValue(data_memory, line_) == 0) {
-    if (dynamic_cast<WriteOperator*>(operator_) != nullptr ||
-        dynamic_cast<ReadOperator*>(operator_) != nullptr) {
+  if (dynamic_cast<RegisterOperand*>(operand_) != nullptr ||
+      dynamic_cast<RegisterPointerOperand*>(operand_) != nullptr) {
+    int index =
+        reinterpret_cast<RegisterOperand*>(operand_)->GetIndex(data_memory);
+    if (index == 0 && (dynamic_cast<WriteOperator*>(operator_) != nullptr ||
+                       dynamic_cast<ReadOperator*>(operator_) != nullptr)) {
       throw AccumulatorIncompatibilityException{operator_->ToString(), line_};
     }
   }

@@ -10,4 +10,8 @@ int& RegisterPointerOperand::GetValue(DataMemory& data_memory,
   return data_memory[data_memory[index_]->GetValue()]->GetValue();
 }
 
+int RegisterPointerOperand::GetIndex(DataMemory& data_memory) {
+  return data_memory[index_]->GetValue();
+}
+
 }  // namespace daa

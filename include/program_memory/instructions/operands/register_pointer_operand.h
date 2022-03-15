@@ -11,6 +11,8 @@ class RegisterPointerOperand : public Operand {
 
   int& GetValue(DataMemory& data_memory, std::size_t current_line) override;
 
+  int GetIndex(DataMemory& data_memory);
+
  private:
   int index_;
 };
