@@ -8,12 +8,12 @@ namespace daa {
 
 class AccumulatorIncompatibilityException : public std::exception {
  public:
-  AccumulatorIncompatibilityException(const std::string& operator_name, int line);
+  AccumulatorIncompatibilityException(const std::string& operator_name,
+                                      int line);
   const char* what() const noexcept override;
 
  private:
-  std::string operator_name_;
-  int line_;
+  std::string text_;
 };
 
 }  // namespace daa

@@ -3,12 +3,10 @@
 namespace daa {
 
 InstructionIncompatibleException::InstructionIncompatibleException(int line)
-    : line_{line} {}
+    : text_{"Instruction incompatible in line " + std::to_string(line) + "."} {}
 
 const char* InstructionIncompatibleException::what() const noexcept {
-  std::string text =
-      "Instruction incompatible in line " + std::to_string(line_) + ".";
-  return text.c_str();
+  return text_.c_str();
 }
 
 }  // namespace daa

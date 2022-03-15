@@ -37,6 +37,9 @@ int main(int argc, char* argv[]) {
   } catch (const daa::EmptyInputBufferException& error) {
     std::cerr << argv[0] << ": " << error.what() << "\n";
     return 5;
+  } catch (const daa::AccumulatorIncompatibilityException& error) {
+    std::cerr << argv[0] << ": " << error.what() << "\n";
+    return 6;
   } catch (...) {
     std::cerr << argv[0] << ": Unknown error\n";
     return 99;

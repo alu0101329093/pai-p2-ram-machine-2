@@ -9,10 +9,11 @@ namespace daa {
 class InstructionIncompatibleException : public std::exception {
  public:
   InstructionIncompatibleException(int line);
+
   const char* what() const noexcept override;
 
  private:
-  int line_;
+  std::string text_;
 };
 
 }  // namespace daa

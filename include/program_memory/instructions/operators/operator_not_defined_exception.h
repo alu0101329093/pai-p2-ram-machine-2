@@ -9,11 +9,11 @@ namespace daa {
 class OperatorNotDefinedException : public std::exception {
  public:
   OperatorNotDefinedException(std::string operator_name, int line);
+
   const char* what() const noexcept override;
 
  private:
-  std::string operator_name_;
-  int line_;
+  std::string text_;
 };
 
 }  // namespace daa
