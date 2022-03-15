@@ -6,8 +6,9 @@
 
 #include "arguments_parsing.h"
 #include "insufficient_arguments_exception.h"
-#include "program_memory/instructions/instruction_incomptible_exception.h"
+#include "program_memory/instructions/instruction_incompatible_exception.h"
 #include "program_memory/instructions/operands/tag_not_defined_exception.h"
+#include "program_memory/instructions/operators/accumulator_incompatibility_exception.h"
 #include "program_memory/instructions/operators/operator_not_defined_exception.h"
 #include "ram_machine/ram_machine.h"
 #include "tapes/empty_input_buffer_exception.h"
