@@ -26,11 +26,12 @@ int& RegisterOperand::GetValue(DataMemory& data_memory,
   return data_memory[index_]->GetValue(index_operand);
 }
 
-int& RegisterOperand::GetSum(DataMemory& data_memory, std::size_t current_line) {
+int RegisterOperand::GetSum(DataMemory& data_memory,
+                             std::size_t current_line) {
   std::size_t size = data_memory[index_]->GetSize();
   int sum{};
   for (std::size_t i = 0; i < size; ++i) {
-    sum += data_memory[index_]->GetValue();
+    sum += data_memory[index_]->GetValue(i);
   }
   return sum;
 }

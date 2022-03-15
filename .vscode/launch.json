@@ -6,10 +6,10 @@
       "type": "cppdbg",
       "request": "launch",
       "args": [
-        "ejemplosRAM/testinsertion.ram",
+        "ejemplosRAM/test5v.ram",
         "bin/input_tape.in",
         "bin/output_tape.out",
-        "1"
+        "2"
       ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
